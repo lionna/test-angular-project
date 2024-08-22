@@ -2,10 +2,12 @@ import { AbstractControl, ValidationErrors } from "@angular/forms";
 
 export class PasswordStrengthValidator {
     static strong(control: AbstractControl): ValidationErrors | null {
-        const value = control.value || "";
+        const { value } = control;
 
-        if (!value) {
-            return null;
+        if (!value.trim()) {
+            return {
+                strong: "Input value is empty",
+            };
         }
 
         const hasMinLength = value.length >= 8;
