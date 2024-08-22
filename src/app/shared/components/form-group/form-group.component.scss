@@ -1,0 +1,50 @@
+@import '../../utils/constants.scss';
+
+.form-group {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    padding: 2px;
+    color: $TEXT_COLOR_GRAY;
+    font-size: 10px;
+    margin-left: 12px;
+  }
+
+  .item-group {
+    display: flex;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    input {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid $BACKGROUND_COLOR_GREY;
+      border-radius: 2px;
+      background-color: $BACKGROUND_COLOR_GREY;
+      margin-right: 10px;
+
+      &.invalid-input {
+        border-color: $ITEM_ERROR_MESSAGE;
+        background-color: $ITEM_ERROR_BACK_COLOR;
+        color: $TEXT_COLOR_GRAY;
+      }
+    }  
+  }
+  .error {
+    color: $ITEM_ERROR_MESSAGE;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+  }
+}
+
+.error {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 10px;
+  padding-left: 12px;
+}

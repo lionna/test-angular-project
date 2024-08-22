@@ -1,0 +1,26 @@
+<div [formGroup]="parentForm">
+  <div formArrayName="{{formArrayName}}">
+    <div class="form-group" *ngFor="let item of formArray.controls; let i = index">
+      <label for="item-{{i}}">{{labelValue}}</label>
+      <div class="item-group">
+        <input
+          type="text"
+          [id]="'item-' + i"
+          [formControlName]="i"
+          [ngClass]="{'invalid-input': !item.valid && item.touched}"
+        /> 
+        <app-custom-button (click)="removeItem.emit(i)" class="red-button" [disabled]="formArray.length === 1" height="40" type="button">
+          <img src="assets/trash.png" style="height: 24px;" alt="Remove"> 
+        </app-custom-button>
+      </div>
+      @if(item.invalid && item.touched){
+        @if(item.hasError('required')) {
+          <small class="error">Please enter a {{messageValue}}.</small>
+        }
+       @else{
+        <small class="error">Check input {{messageValue}}</small>
+        }          
+      }
+    </div>
+  </div>
+</div>
