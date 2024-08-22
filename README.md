@@ -139,3 +139,29 @@ valid admin page
   - [x] HTTP interceptor is used to pass the token and the base API URL (+10)
 
 ![image](img/5.2.png)
+
+
+# Task 6: NgRx
+
+1. Task 6: NgRx [link](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/NgRX.md)
+2. Screenshots:
+header with create custom and favorite buttons:
+![image](img/6.1.png)
+list of videos:
+![image](img/6.2.png)
+favorites list:
+![image](img/6.3.png)
+pagination
+![image](img/6.4.png)
+
+
+3. Score: 100 / 110
+  - [x] Admin Page is generated (+5)
+  - [x] Favorite Page is generated (+5)
+  - [x] NgRx package is used and storage is created (+5)
+  - [x] Custom Cards are saved in the store (+10)
+  - [x] Videos (with favorite button) from the YouTube API received via Effects are saved in store (+20)
+  - [x] Custom Cards (without favorite button) are displayed on List Page combined with YouTube videos (+20)
+  - [x] Favorite Page displays all marked videos from List Page or View Page (+10)
+  - [x] Clicking the favorite button on the card on Favorite Page removes item from the store and from the page immediately (+15)
+  - [x] List Page displays 20 items with pagination and Custom Cards are added to the beginning of the list on 1 page (+10)

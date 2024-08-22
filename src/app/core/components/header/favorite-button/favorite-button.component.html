@@ -1,0 +1,10 @@
+<app-custom-button class="yellow-button" type="button">
+  <div class="button-container">
+    <img src="assets/star_white.png" alt="Favorite" />
+    @if (favoriteCount !== null && favoriteCount > 0) {
+      <span class="badge">{{
+        favoriteCount !== null ? favoriteCount : 0
+      }}</span>
+    }
+  </div>
+</app-custom-button>

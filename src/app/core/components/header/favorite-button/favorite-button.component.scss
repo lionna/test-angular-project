@@ -1,0 +1,25 @@
+app-custom-button {
+  margin: 5px;
+  width: 24px;
+
+  .button-container {
+    position: relative;
+
+    img {
+      height: 15px;
+    }
+
+    .badge {
+      background-color: red;
+      color: white;
+      font-size: 0.75rem;
+      border-radius: 50%;
+      position: absolute;
+      top: -0.5rem;
+      right: -0.9rem;
+      display: inline-block;
+      min-width: 1.2rem;
+      text-align: center;
+    }
+  }
+}

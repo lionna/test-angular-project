@@ -5,7 +5,7 @@ import { Component, Input } from "@angular/core";
     standalone: true,
     imports: [],
     templateUrl: "./dislikes-count.component.html",
-    styleUrl: "./dislikes-count.component.scss"
+    styleUrl: "./dislikes-count.component.scss",
 })
 export class DislikesCountComponent {
     @Input() count!: string;

@@ -1,0 +1,27 @@
+@if (totalPages > 1) {
+    <div class="pagination">
+        <app-custom-button
+            (click)="goToPreviousPage()"
+            [disabled]="currentPageValue === 1"
+        >
+            <div class="button-container">
+                <span>
+                    <img src="assets/preview.png" alt="Previous" />
+                    Previous
+                </span>
+            </div>
+        </app-custom-button>
+        <span>Page {{ currentPageValue }} of {{ totalPages }}</span>
+        <app-custom-button
+            (click)="goToNextPage()"
+            [disabled]="currentPageValue === totalPages"
+        >
+            <div class="button-container">
+                <span>
+                    Next
+                    <img src="assets/next.png" alt="Next" />
+                </span>
+            </div>
+        </app-custom-button>
+    </div>
+}

@@ -8,7 +8,7 @@ import { debounceTime, filter } from "rxjs/operators";
     standalone: true,
     imports: [FormsModule],
     templateUrl: "./search-input.component.html",
-    styleUrl: "./search-input.component.scss"
+    styleUrl: "./search-input.component.scss",
 })
 export class SearchInputComponent {
     searchQuery = "";
@@ -17,12 +17,14 @@ export class SearchInputComponent {
     @Output() searchQueryChange = new EventEmitter<string>();
 
     constructor() {
-        this.searchSubject.pipe(
-            debounceTime(1000),
-            filter((query) => query.length >= 3)
-        ).subscribe((query) => {
-            this.searchQueryChange.emit(query);
-        });
+        this.searchSubject
+            .pipe(
+                debounceTime(1000),
+                filter((query) => query.length >= 3),
+            )
+            .subscribe((query) => {
+                this.searchQueryChange.emit(query);
+            });
     }
 
     searchItems() {

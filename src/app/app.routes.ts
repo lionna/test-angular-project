@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 
 import { LoginComponent } from "./auth/components/login/login.component";
 import { authGuardFn } from "./auth/guard/auth.guard";
+import { FavoriteListComponent } from "./favorite/components/favorite-list/favorite-list.component";
 import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
 import { CreateComponent } from "./youtube/components/create/create.component";
 import { DetailComponent } from "./youtube/components/detail/detail.component";
@@ -11,7 +12,7 @@ export const routes: Routes = [
     {
         path: "",
         component: LoginComponent,
-        pathMatch: "full"
+        pathMatch: "full",
     },
     {
         path: "search",
@@ -20,7 +21,7 @@ export const routes: Routes = [
     },
     {
         path: "login",
-        component: LoginComponent
+        component: LoginComponent,
     },
     {
         path: "detail/:id",
@@ -33,11 +34,16 @@ export const routes: Routes = [
         canActivate: [authGuardFn],
     },
     {
+        path: "favorites",
+        component: FavoriteListComponent,
+        canActivate: [authGuardFn],
+    },
+    {
         path: "404",
-        component: NotFoundComponent
+        component: NotFoundComponent,
     },
     {
         path: "**",
-        redirectTo: "/404"
-    }
+        redirectTo: "/404",
+    },
 ];

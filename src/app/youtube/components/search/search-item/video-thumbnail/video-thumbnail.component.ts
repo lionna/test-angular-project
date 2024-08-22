@@ -5,7 +5,7 @@ import { Component, Input } from "@angular/core";
     standalone: true,
     imports: [],
     templateUrl: "./video-thumbnail.component.html",
-    styleUrl: "./video-thumbnail.component.scss"
+    styleUrl: "./video-thumbnail.component.scss",
 })
 export class VideoThumbnailComponent {
     @Input() thumbnailUrl!: string;

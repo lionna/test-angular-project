@@ -1,7 +1,10 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import {
-    FormControl, FormGroup, ReactiveFormsModule, Validators
+    FormControl,
+    FormGroup,
+    ReactiveFormsModule,
+    Validators,
 } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -12,32 +15,22 @@ import { PasswordStrengthValidator } from "../../validators/password-strength.va
 @Component({
     selector: "app-login",
     standalone: true,
-    imports: [
-        CustomButtonComponent,
-        ReactiveFormsModule,
-        CommonModule
-    ],
+    imports: [CustomButtonComponent, ReactiveFormsModule, CommonModule],
     templateUrl: "./login.component.html",
-    styleUrls: ["./login.component.scss"]
+    styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent {
     constructor(
         private userAuthService: UserAuthService,
-        private router: Router
+        private router: Router,
     ) {}
 
     public loginForm = new FormGroup({
-        login: new FormControl(
-            "",
-            [
-                Validators.required,
-                Validators.email
-            ]
-        ),
+        login: new FormControl("", [Validators.required, Validators.email]),
         password: new FormControl("", [
             Validators.required,
-            PasswordStrengthValidator.strong
-        ])
+            PasswordStrengthValidator.strong,
+        ]),
     });
 
     onSubmit() {
@@ -45,7 +38,9 @@ export class LoginComponent {
             const inputLogin = this.loginForm.controls.login.value ?? "";
             const inputPassword = this.loginForm.controls.password.value ?? "";
 
-            if (this.userAuthService.authenticateUser(inputLogin, inputPassword)) {
+            if (
+                this.userAuthService.authenticateUser(inputLogin, inputPassword)
+            ) {
                 this.router.navigate(["/search"]);
             } else {
                 alert("Check input Value. Invalid login or password.");

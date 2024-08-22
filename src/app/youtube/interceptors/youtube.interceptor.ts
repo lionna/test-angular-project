@@ -10,7 +10,7 @@ import { environment } from "../../../environments/environment";
 
 export const youtubeInterceptorFn: HttpInterceptorFn = (
     req: HttpRequest<unknown>,
-    next: HttpHandlerFn
+    next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> => {
     const apiKey = environment.YOUTUBE_API_KEY;
     const { baseUrl } = environment;

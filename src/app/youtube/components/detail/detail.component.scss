@@ -28,7 +28,7 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
-    background-color: #e5e5e5;
+    background-color: $MAIN_BACKGROUND_COLOR_GREY;
 
     .detail-image {
       position: relative;
@@ -93,7 +93,7 @@
         align-items: flex-start;
         .description {
           margin: 10px 0;
-          color: $TEXT_COLOR_GRAY;
+          color: $TEXT_COLOR_GREY;
           font-size: 12px;
         }
       }
@@ -109,7 +109,7 @@
           margin-bottom: 30px;
 
           .date {
-            color: $TEXT_COLOR_GRAY;
+            color: $TEXT_COLOR_GREY;
             font-size: 10px;
           }
         }

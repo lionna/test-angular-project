@@ -7,8 +7,6 @@ import { CustomButtonComponent } from "../../../../../shared/components/custom-b
     standalone: true,
     imports: [CustomButtonComponent],
     templateUrl: "./more-button.component.html",
-    styleUrl: "./more-button.component.scss"
+    styleUrl: "./more-button.component.scss",
 })
-export class MoreButtonComponent {
-
-}
+export class MoreButtonComponent {}

@@ -1,22 +1,52 @@
 <div class="search-item" [appBorderItem]="videoItem.snippet.publishedAt">
-  <app-video-thumbnail [thumbnailUrl]="videoItem.snippet.thumbnails.high.url"
-                       [width]="videoItem.snippet.thumbnails.high.width"
-                       [height]="videoItem.snippet.thumbnails.high.height">
+  <app-video-thumbnail
+    [thumbnailUrl]="videoItem.snippet.thumbnails.high.url"
+    [width]="videoItem.snippet.thumbnails.high.width"
+    [height]="videoItem.snippet.thumbnails.high.height"
+  >
   </app-video-thumbnail>
   <div class="item-info">
     <div class="item-header">
-      <app-views-count [count]="videoItem.statistics.viewCount"></app-views-count>
-      <app-likes-count 
-      [count]="videoItem.statistics.likeCount" 
-      [isLiked]="videoItem.statistics.isLiked"
-      (likeChange)="onLike()"></app-likes-count>
-      <app-dislikes-count [count]="videoItem.statistics.dislikeCount"></app-dislikes-count>
-      <app-comments-count [count]="videoItem.statistics.commentCount"></app-comments-count>
+      @if (videoItem.kind !== "custom") {
+        <app-views-count
+          [count]="videoItem.statistics.viewCount"
+        ></app-views-count>
+        <app-likes-count
+          [count]="videoItem.statistics.likeCount"
+          [isLiked]="videoItem.statistics.isLiked"
+          (likeChange)="onLike()"
+        ></app-likes-count>
+        <app-comments-count
+          [count]="videoItem.statistics.commentCount"
+        ></app-comments-count>
+      }
     </div>
     <div class="item-description">
       <p>{{ videoItem.snippet.title }}</p>
     </div>
     <div class="item-button">
+      @if (videoItem.kind !== "custom") {
+        @if (isFavorite$ | async) {
+          <app-favorite-button
+            class="white-button"
+            type="button"
+            (click)="onRemoveFavorite()"
+          ></app-favorite-button>
+        } @else {
+          <app-add-favorite-button
+            class="white-button"
+            type="button"
+            (click)="onAddFavorite()"
+          ></app-add-favorite-button>
+        }
+      }
+      @else{
+        <app-remove-button
+        class="red-button"
+        type="button"
+        (click)="onRemoveCustom()"
+      ></app-remove-button>
+      }
       <app-more-button (click)="onMoreInfo()"></app-more-button>
     </div>
   </div>

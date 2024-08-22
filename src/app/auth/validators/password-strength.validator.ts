@@ -14,13 +14,19 @@ export class PasswordStrengthValidator {
         const hasNumeric = /[0-9]+/.test(value);
         const hasSpecial = /[!@#?+_]+/.test(value);
 
-        const isValid = hasMinLength && hasUpperCase && hasLowerCase && hasNumeric && hasSpecial;
+        const isValid =
+            hasMinLength &&
+            hasUpperCase &&
+            hasLowerCase &&
+            hasNumeric &&
+            hasSpecial;
 
         if (!isValid) {
             return {
-                strong: "Your password isn't strong enough."
-                + "It should be at least 8 characters long and include a mixture of"
-                + "uppercase, lowercase, numbers, and special characters !@#?+_"
+                strong:
+                    "Your password isn't strong enough." +
+                    "It should be at least 8 characters long and include a mixture of" +
+                    "uppercase, lowercase, numbers, and special characters !@#?+_",
             };
         }
 

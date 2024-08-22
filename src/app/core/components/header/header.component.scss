@@ -1,8 +1,10 @@
+@import '../../../shared/utils/constants.scss';
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #e5e5e5;
+  background-color: $MAIN_BACKGROUND_COLOR_GREY;
   padding: 10px;
   height: 80px;
 
@@ -38,6 +40,6 @@
 .additional-filters {
   display: flex;
   justify-content: center;
-  background-color: #e5e5e5;
+  background-color: $MAIN_BACKGROUND_COLOR_GREY;
   height: 80px;
 }

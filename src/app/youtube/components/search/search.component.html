@@ -1,8 +1,21 @@
- <div class="search"> 
-  @for (item of filteredItems | filterTextPipe: filterText; track item?.id) {
-    <app-search-item 
-      [videoItem]="item" 
-      (likeChange)="handleLike($event)">
-    </app-search-item>
-  }
+<div class="search">
+    <ng-container *ngIf="videos$ | async as videos; else loading">
+        <ng-container *ngFor="let item of videos | filterTextPipe: filterText">
+            <app-search-item
+                [videoItem]="item"
+                (likeChange)="handleLike($event)"
+            >
+            </app-search-item>
+        </ng-container>
+    </ng-container>
+    <ng-template #loading>
+        <p>Loading...</p>
+    </ng-template>
 </div>
+@if (totalPages > 1) {
+    <app-pagination 
+    [currentPage]="currentPage" 
+    [totalPages]="totalPages">
+  </app-pagination>
+  }
+  

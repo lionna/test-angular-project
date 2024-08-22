@@ -74,3 +74,27 @@ button {
     cursor: not-allowed;
   }
 }
+
+:host-context(.grey-button) button {
+  background-color: $MAIN_BACKGROUND_COLOR_GREY;
+  &:hover {
+    opacity: $ITEM_OPACITY;
+  }
+  &:disabled {
+    background-color: $ITEM_COLOR_GREY;
+    cursor: not-allowed;
+  }
+}
+
+:host-context(.white-button) button {
+  background-color: $ITEM_COLOR_WHITE;
+  border-radius: 50%;
+ 
+  &:hover {
+    opacity: $ITEM_OPACITY;
+  }
+  &:disabled {
+    background-color: $ITEM_COLOR_GREY;
+    cursor: not-allowed;
+  }
+}

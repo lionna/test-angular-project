@@ -1,14 +1,12 @@
 import { CommonModule } from "@angular/common";
-import {
-    Component, EventEmitter, Input, Output
-} from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
     selector: "app-custom-button",
     standalone: true,
     imports: [CommonModule],
     templateUrl: "./custom-button.component.html",
-    styleUrl: "./custom-button.component.scss"
+    styleUrl: "./custom-button.component.scss",
 })
 export class CustomButtonComponent {
     @Output() buttonClick = new EventEmitter<void>();
