@@ -1,5 +1,4 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { Injectable, signal } from "@angular/core";
 
 import { VideoItem } from "../../shared/interfaces/videoItem.interface";
 import { updateCounter } from "../../shared/utils/counter-utils";
@@ -8,8 +7,7 @@ import { updateCounter } from "../../shared/utils/counter-utils";
     providedIn: "root",
 })
 export class LikeService {
-    private videoItemsSubject = new BehaviorSubject<VideoItem[]>([]);
-    videoItems$ = this.videoItemsSubject.asObservable();
+    videoItemsSignal = signal<VideoItem[]>([]);
 
     updateLikeStatus(
         items: VideoItem[],
@@ -22,13 +20,13 @@ export class LikeService {
                 : videoItem,
         );
 
-        this.videoItemsSubject.next(updatedItems);
+        this.videoItemsSignal.set(updatedItems);
         return updatedItems;
     }
 
     private getUpdatedItem(item: VideoItem, isLiked: boolean): VideoItem {
         return {
-            ...item,
+            ...structuredClone(item),
             statistics: {
                 ...item.statistics,
                 isLiked,
@@ -41,6 +39,6 @@ export class LikeService {
     }
 
     setVideoItems(items: VideoItem[]): void {
-        this.videoItemsSubject.next(items);
+        this.videoItemsSignal.set(items);
     }
 }

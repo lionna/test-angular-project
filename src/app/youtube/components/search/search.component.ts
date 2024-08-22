@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, signal } from "@angular/core";
 import { Store } from "@ngrx/store";
 import {
     BehaviorSubject,
@@ -62,8 +62,8 @@ export class SearchComponent implements OnInit, OnDestroy {
     private previousQuery$: Observable<string>;
 
     currentPage = new BehaviorSubject<number>(1);
-    itemsPerPage: number = 20;
-    totalPages: number = 1;
+    itemsPerPage = signal<number>(20);
+    totalPages = signal<number>(1);
 
     constructor(
         private searchService: GetInformationService,
@@ -123,19 +123,18 @@ export class SearchComponent implements OnInit, OnDestroy {
                         );
                     }
 
-                    this.totalPages = Math.ceil(
-                        allItems.length / this.itemsPerPage,
+                    this.totalPages.set(
+                        Math.ceil(allItems.length / this.itemsPerPage()),
                     );
 
                     const paginatedItems = allItems.slice(
-                        (currentPage - 1) * this.itemsPerPage,
-                        currentPage * this.itemsPerPage,
+                        (currentPage - 1) * this.itemsPerPage(),
+                        currentPage * this.itemsPerPage(),
                     );
                     return paginatedItems;
                 },
             ),
         );
-
         this.subscriptions.add(
             this.sortingService.searchQuery$
                 .pipe(

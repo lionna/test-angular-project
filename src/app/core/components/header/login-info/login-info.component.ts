@@ -1,8 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
 import { Router, RouterLink } from "@angular/router";
 import { Store } from "@ngrx/store";
-import { Observable, Subscription } from "rxjs";
+import { Subscription } from "rxjs";
 
 import { UserAuthService } from "../../../../auth/services/user.auth.service";
 import { selectFavoriteCount } from "../../../../redux/selectors/favorite.selectors";
@@ -27,7 +28,9 @@ export class LoginInfoComponent implements OnInit, OnDestroy {
     isAdmin = false;
     isUserAuthenticated = false;
     login: string | null = null;
-    favoriteCount$: Observable<number>;
+    favoriteCount = toSignal(this.store.select(selectFavoriteCount), {
+        initialValue: 0,
+    });
     private authSubscription: Subscription | null = null;
     private adminSubscription: Subscription | null = null;
 
@@ -35,12 +38,9 @@ export class LoginInfoComponent implements OnInit, OnDestroy {
         private authService: UserAuthService,
         private router: Router,
         private store: Store,
-    ) {
-        this.favoriteCount$ = this.store.select(selectFavoriteCount);
-    }
+    ) {}
 
     ngOnInit() {
-        this.favoriteCount$ = this.store.select(selectFavoriteCount);
         this.updateAuthStatus();
         this.authSubscription = this.authService.authState$.subscribe(
             (status) => {

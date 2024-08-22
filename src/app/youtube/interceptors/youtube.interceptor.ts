@@ -13,7 +13,7 @@ export const youtubeInterceptorFn: HttpInterceptorFn = (
     next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> => {
     const apiKey = environment.YOUTUBE_API_KEY;
-    const { baseUrl } = environment;
+    const baseUrl = environment.baseUrl;
 
     const clonedRequest = req.clone({
         url: `${baseUrl}${req.url}`,
