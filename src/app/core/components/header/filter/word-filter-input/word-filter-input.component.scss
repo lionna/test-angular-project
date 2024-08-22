@@ -1,3 +1,5 @@
+@import '../../../../../shared/utils/constants.scss';
+
 .word-filter {
   display: flex;
   align-items: center;
@@ -27,7 +29,7 @@
   }  
 
   .text-color-blue {
-    color: #007bff;
+    color: $ITEM_COLOR_LIGHT_BLUE;
     padding: 12px;
   }
 }

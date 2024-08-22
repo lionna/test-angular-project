@@ -1,12 +1,11 @@
-$ITEM_COLOR_OLD: #d53e07;
-$ITEM_COLOR_MIDDLE_AGED: #e8c96d;
-$ITEM_COLOR_RECENT: #507d2a;
-$ITEM_COLOR_NEW: blue;
+@import '../../../shared/utils/constants.scss';
+
+$ITEM_OPACITY: 0.7;
 
 button {
   padding: 5px 10px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: $ITEM_COLOR_LIGHT_BLUE;
   color: white;
   border: none;
   border-radius: 5px;
@@ -14,10 +13,11 @@ button {
   text-align: center;
 
   &:hover {
-    background-color: #5EA2FF;
+    background-color: $ITEM_COLOR_LIGHT_BLUE_HOVER;
   }
   &:disabled {
-    background-color: #B1B1B1;
+    background-color: $ITEM_COLOR_GREY;
+    cursor: not-allowed;
   }
 }
 
@@ -31,30 +31,46 @@ button {
   border-bottom-right-radius: 0px;
 }
 
-:host-context(.old-item-button) button {
-  background-color: $ITEM_COLOR_OLD;
+:host-context(.red-button) button {
+  background-color: $ITEM_COLOR_RED;
   &:hover {
-    background-color: #5EA2FF;
+    opacity: $ITEM_OPACITY;
+  }
+  &:disabled {
+    background-color: $ITEM_COLOR_GREY;
+    cursor: not-allowed;
   }
 }
 
-:host-context(.middle-item-button) button {
-  background-color: $ITEM_COLOR_MIDDLE_AGED;
+:host-context(.yellow-button) button {
+  background-color: $ITEM_COLOR_YELLOW;
   &:hover {
-    background-color: #5EA2FF;
+    opacity: $ITEM_OPACITY;
+  }
+  &:disabled {
+    background-color: $ITEM_COLOR_GREY;
+    cursor: not-allowed;
   }
 }
 
-:host-context(.recent-item-button) button {
-  background-color: $ITEM_COLOR_RECENT;
+:host-context(.green-button) button {
+  background-color: $ITEM_COLOR_GREEN;
   &:hover {
-    background-color: #5EA2FF;
+    opacity: $ITEM_OPACITY;
+  }
+  &:disabled {
+    background-color: $ITEM_COLOR_GREY;
+    cursor: not-allowed;
   }
 }
 
-:host-context(.new-item-button) button {
-  background-color: $ITEM_COLOR_NEW;
+:host-context(.blue-button) button {
+  background-color: $ITEM_COLOR_BLUE;
   &:hover {
-    background-color: #5EA2FF;
+    opacity: $ITEM_OPACITY;
+  }
+  &:disabled {
+    background-color: $ITEM_COLOR_GREY;
+    cursor: not-allowed;
   }
 }

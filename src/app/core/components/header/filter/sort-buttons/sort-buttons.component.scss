@@ -1,17 +1,19 @@
+@import '../../../../../shared/utils/constants.scss';
+
 .sort-buttons {
   display: flex;
   align-items: center;
 
   .text-color-blue {
-    color: #007bff;
+    color: $ITEM_COLOR_LIGHT_BLUE;
     padding: 10px;
 
     &:hover {
-      color: #b1b1b1;
+      color: $ITEM_COLOR_GREY;
     }
   }
 
   .text-color-gray {
-    color: #929292;
+    color: $TEXT_COLOR_DARK_GRAY;
   }
 }

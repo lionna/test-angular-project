@@ -1,13 +1,13 @@
 @import '../../../shared/utils/constants.scss';
 
-.login-container {
+.create-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 50px;  
 }
 
-.login-box {
+.create-form-box {
   background-color: $FORM_COLOR_GRAY;
   padding: 25px;
   border-radius: 5px;
@@ -64,18 +64,12 @@
     text-align: left;
     font-size: 10px;
     padding-left: 12px;
-
-    ul {
-      color: $TEXT_COLOR_GRAY;
-      padding-left: 15px;
-      margin-top: 5px;
-      list-style-type: disc;
-      font-weight: bolder;
-    }
   }
 
-  .login-button-wrapper {
+  .create-button-wrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }

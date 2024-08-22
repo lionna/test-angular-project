@@ -12,8 +12,8 @@ export const DAYS_THRESHOLDS = {
 };
 
 export const ITEM_COLOR_CLASSES = {
-    ITEM_COLOR_OLD: "old-item-button",
-    ITEM_COLOR_MIDDLE_AGED: "middle-item-button",
-    ITEM_COLOR_RECENT: "recent-item-button",
-    ITEM_COLOR_NEW: "new-item-button"
+    ITEM_COLOR_OLD: "red-button",
+    ITEM_COLOR_MIDDLE_AGED: "yellow-button",
+    ITEM_COLOR_RECENT: "green-button",
+    ITEM_COLOR_NEW: "blue-button"
 };

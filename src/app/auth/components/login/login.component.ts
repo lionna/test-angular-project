@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import {
     FormControl, FormGroup, ReactiveFormsModule, Validators
@@ -6,13 +7,15 @@ import { Router } from "@angular/router";
 
 import { CustomButtonComponent } from "../../../shared/components/custom-button/custom-button.component";
 import { UserAuthService } from "../../services/user.auth.service";
+import { PasswordStrengthValidator } from "../../validators/password-strength.validator";
 
 @Component({
     selector: "app-login",
     standalone: true,
     imports: [
         CustomButtonComponent,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CommonModule
     ],
     templateUrl: "./login.component.html",
     styleUrls: ["./login.component.scss"]
@@ -28,25 +31,21 @@ export class LoginComponent {
             "",
             [
                 Validators.required,
-                Validators.min(2),
-                Validators.email]
+                Validators.email
+            ]
         ),
         password: new FormControl("", [
-            Validators.min(2),
-            Validators.required
+            Validators.required,
+            PasswordStrengthValidator.strong
         ])
     });
 
     onSubmit() {
-        console.log(this.loginForm.value);
         if (this.loginForm.valid) {
             const inputLogin = this.loginForm.controls.login.value ?? "";
             const inputPassword = this.loginForm.controls.password.value ?? "";
 
-            if (this.userAuthService.authenticateUser(
-                inputLogin,
-                inputPassword
-            )) {
+            if (this.userAuthService.authenticateUser(inputLogin, inputPassword)) {
                 this.router.navigate(["/search"]);
             } else {
                 alert("Check input Value. Invalid login or password.");

@@ -98,3 +98,29 @@ detail information:
   - [x] The Detailed information page is implemented (+20)
   - [x] The app.component doesn't include any logic and used only for markup (+15)
   - [x] At least two services (Login service and Youtube service) are implemented (+20)
+
+
+# Task 4: Forms
+
+1. Task 4: forms [link](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/forms.md)
+2. Screenshot:
+invalid login page:
+![image](img/4.1.png)
+login page:
+![image](img/4.2.png)
+invalid admin page
+![image](img/4.3.png)
+![image](img/4.4.png)
+valid admin page
+![image](img/4.5.png)
+![image](img/4.6.png)
+
+3. Score: 100 / 110
+  - [x] Login block is implemented as reactive form (+10)
+  - [x] Validation rules are applied to the Login block. Form submission is possible only if all inputs are valid (+15)
+  - [x] The application indicates which inputs are invalid on the Login block with appropriate styles and messages (+15)
+  - [x] Admin page is implemented as reactive form (+10)
+  - [x] Validation rules are applied to the Admin page. Form submission is possible only if all inputs are valid (+15)
+  - [x] The application indicates which inputs are invalid on the Admin page with appropriate styles and messages (+15)
+  - [x] "Tags" sub-form is implemented using FormArray. "Add tag" button works correctly (+15)
+  - [x] "Reset" button functionality is fully implemented (+5)

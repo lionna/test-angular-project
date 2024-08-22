@@ -1,3 +1,5 @@
+@import '../../../shared/utils/constants.scss';
+
 .center-content-container {
   display: flex;
   align-items: center;
@@ -13,7 +15,7 @@
       display: flex;
       align-items: center;
       position: center;
-      color: #929292;
+      color: $TEXT_COLOR_DARK_GRAY;
       font-size: 2rem;
       font-weight: bold; 
   
