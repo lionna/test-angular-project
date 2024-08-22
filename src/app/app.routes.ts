@@ -1,3 +1,37 @@
 import { Routes } from "@angular/router";
 
-export const routes: Routes = [];
+import { LoginComponent } from "./auth/components/login/login.component";
+import { authGuardFn } from "./auth/guard/auth.guard";
+import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
+import { DetailComponent } from "./youtube/components/detail/detail.component";
+import { SearchComponent } from "./youtube/components/search/search.component";
+
+export const routes: Routes = [
+    {
+        path: "",
+        component: LoginComponent,
+        pathMatch: "full"
+    },
+    {
+        path: "search",
+        component: SearchComponent,
+        canActivate: [authGuardFn],
+    },
+    {
+        path: "login",
+        component: LoginComponent
+    },
+    {
+        path: "detail/:id",
+        component: DetailComponent,
+        canActivate: [authGuardFn],
+    },
+    {
+        path: "404",
+        component: NotFoundComponent
+    },
+    {
+        path: "**",
+        redirectTo: "/404"
+    }
+];

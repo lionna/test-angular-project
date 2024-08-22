@@ -1,0 +1,7 @@
+<button
+  [ngStyle]="{ 'height.px': height, 'width.px': width, 'background-color': backgroundColor }"
+  [attr.disabled]="disabled ? true : null"
+  (click)="onClick()"
+>
+  <ng-content></ng-content>
+</button>

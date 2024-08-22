@@ -1,0 +1,14 @@
+<div class="login-info">
+  @if(isUserAuthenticated){    
+    <img src="assets/user-icon.png" alt="User Icon" />
+      <span class="user-name">{{ login }}</span>
+      <app-custom-button (click)="logout()">
+        SingOut
+      </app-custom-button>   
+  }
+@else{ 
+  <app-custom-button (click)="navigateToLogin()">
+    SingIn
+  </app-custom-button>  
+} 
+</div>

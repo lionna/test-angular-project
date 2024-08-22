@@ -1,0 +1,60 @@
+$ITEM_COLOR_OLD: #d53e07;
+$ITEM_COLOR_MIDDLE_AGED: #e8c96d;
+$ITEM_COLOR_RECENT: #507d2a;
+$ITEM_COLOR_NEW: blue;
+
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: #5EA2FF;
+  }
+  &:disabled {
+    background-color: #B1B1B1;
+  }
+}
+
+:host-context(.search-button) button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+:host-context(.back-button) button {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+:host-context(.old-item-button) button {
+  background-color: $ITEM_COLOR_OLD;
+  &:hover {
+    background-color: #5EA2FF;
+  }
+}
+
+:host-context(.middle-item-button) button {
+  background-color: $ITEM_COLOR_MIDDLE_AGED;
+  &:hover {
+    background-color: #5EA2FF;
+  }
+}
+
+:host-context(.recent-item-button) button {
+  background-color: $ITEM_COLOR_RECENT;
+  &:hover {
+    background-color: #5EA2FF;
+  }
+}
+
+:host-context(.new-item-button) button {
+  background-color: $ITEM_COLOR_NEW;
+  &:hover {
+    background-color: #5EA2FF;
+  }
+}

@@ -1,0 +1,34 @@
+<div class="login-container">
+    <div class="login-box" [formGroup]="loginForm">
+      <h2>Login</h2>      
+        <div class="form-group">
+          <label for="login">login</label>
+          <input
+            type="text"
+            id="login"
+            formControlName="login"
+          />
+          @if(!loginForm.controls.login.valid && loginForm.controls.login.touched){
+            <small class="error">Check input login</small>
+          }
+        </div>
+        <div class="form-group">
+          <label for="password">password</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+          />   
+          @if(!loginForm.controls.password.valid && loginForm.controls.password.touched){
+            <small class="error">Check input password</small>
+          }
+        </div> 
+        <div class="login-button-wrapper">
+        <app-custom-button (click)="onSubmit()" [disabled]="!loginForm.valid" width="124" type="submit">
+          Login
+        </app-custom-button>
+      </div>
+       
+    </div>
+  </div>
+  

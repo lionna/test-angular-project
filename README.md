@@ -64,7 +64,7 @@ ng generate class components/search/search-item.model --type=model
 
 1. Task 2: [link](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/components-directives-pipes.md)
 2. Screenshot:
-![image](img/2.1.pmg)
+![image](img/2.1.png)
 3. Score: 100 /  100
 - [x] Main layout is implemented (+10)
 - [x] Fake search functionality is implemented: by submitting the form in the Header component, search results are shown (+20)
@@ -76,3 +76,25 @@ ng generate class components/search/search-item.model --type=model
 - [x] Custom Button component is implemented and used across the application. The component utilizes [Content projection](https://angular.dev/guide/components/content-projection) to display the button text (+5)
 - [x]  At least one of the components is implemented as [standalone](https://angular.dev/guide/components/importing). (+5)
 
+
+# Task 3: Modules, Services, Routing Task
+
+1. Task3: Modules & Services. Routing  [link](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/modules-services-routing.md/)
+2. Screenshots:
+index page:
+![image](img/3.1.png)
+login validation:
+![image](img/3.2.png)
+search page:
+![image](img/3.3.png)
+detail information:
+![image](img/3.4.png)
+404 page:
+![image](img/3.5.png)
+
+3. Score: 100 / 100
+  - [x] The 404 page and redirection logic is implemented (+15)
+  - [x] The Login page functionality with necessary rules is implemented (+30)
+  - [x] The Detailed information page is implemented (+20)
+  - [x] The app.component doesn't include any logic and used only for markup (+15)
+  - [x] At least two services (Login service and Youtube service) are implemented (+20)

@@ -1,0 +1,14 @@
+.comments-count {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  color: #000000;
+
+  img {
+    height: 13px;
+    margin-right: 5px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
