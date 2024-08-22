@@ -10,7 +10,6 @@ import { FilterComponent } from "./filter/filter.component";
 import { FilterButtonComponent } from "./filter-button/filter-button.component";
 import { LoginInfoComponent } from "./login-info/login-info.component";
 import { LogoComponent } from "./logo/logo.component";
-import { SearchButtonComponent } from "./search-button/search-button.component";
 import { SearchInputComponent } from "./search-input/search-input.component";
 
 @Component({
@@ -22,7 +21,6 @@ import { SearchInputComponent } from "./search-input/search-input.component";
         FilterButtonComponent,
         LoginInfoComponent,
         LogoComponent,
-        SearchButtonComponent,
         SearchInputComponent,
         SearchComponent,
         RouterLink
@@ -47,12 +45,7 @@ export class HeaderComponent {
     }
 
     onSearchQueryChange(query: string) {
-        this.searchQuery = query;
-        this.sortingService.setSearchQuery(query);
-    }
-
-    onSearchClick() {
-        this.searchQuery = this.searchInputComponent.searchQuery || " ";
+        this.searchQuery = query || " ";
         this.isSearchInitiated = true;
         this.sortingService.setSearchQuery(this.searchQuery);
     }

@@ -124,3 +124,18 @@ valid admin page
   - [x] The application indicates which inputs are invalid on the Admin page with appropriate styles and messages (+15)
   - [x] "Tags" sub-form is implemented using FormArray. "Add tag" button works correctly (+15)
   - [x] "Reset" button functionality is fully implemented (+5)
+
+
+# Task 5: Rx JS observables
+
+1. Task 5: rx js observables [link](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/rxjs-observables-http.md)
+2. Screenshot:
+![image](img/5.1.png)
+3. Score: 100 / 100
+  - [x] Search input debounce is implemented (+15)
+  - [x] Login block reflects the current login state (+15)
+  - [x] Search functionality is integrated with the YouTube API (+30)
+  - [x] Detailed information page uses a call to the YouTube API (+30)
+  - [x] HTTP interceptor is used to pass the token and the base API URL (+10)
+
+![image](img/5.2.png)
