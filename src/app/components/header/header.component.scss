@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #e5e5e5;
+  padding: 10px;
+  height: 80px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .login-info {
+    position: absolute;
+    right: 20px;
+    margin-right: 5px;
+
+    @media (min-width: 576px) {
+      right: 25px;
+    }
+  
+    @media (min-width: 768px) {
+      right: 30px;
+    }
+  
+    @media (min-width: 992px) {
+      right: 35px;
+    }
+  
+    @media (min-width: 1200px) {
+      right: 40px;
+    }
+  }
+}
+
+.additional-filters {
+  display: flex;
+  justify-content: center;
+  background-color: #e5e5e5;
+  height: 80px;
+}

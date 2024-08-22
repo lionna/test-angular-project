@@ -1,9 +1,11 @@
 import { Component } from "@angular/core";
 
+import { CustomButtonComponent } from "../../../custom-button/custom-button.component";
+
 @Component({
     selector: "app-more-button",
     standalone: true,
-    imports: [],
+    imports: [CustomButtonComponent],
     templateUrl: "./more-button.component.html",
     styleUrl: "./more-button.component.scss"
 })

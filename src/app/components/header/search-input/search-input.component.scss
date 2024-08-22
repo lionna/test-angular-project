@@ -1,0 +1,26 @@
+input {
+  padding: 5px 10px;
+  border: none;
+  background-color: #EFEFEF;
+  width: 30%;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+
+  @media (min-width: 576px) {
+    width: 40%;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media (min-width: 992px) {
+    width: 60%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 396px;
+  }
+}

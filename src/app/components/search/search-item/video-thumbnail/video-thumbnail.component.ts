@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: "app-video-thumbnail",
@@ -8,5 +8,7 @@ import { Component } from "@angular/core";
     styleUrl: "./video-thumbnail.component.scss"
 })
 export class VideoThumbnailComponent {
-
+    @Input() thumbnailUrl!: string;
+    @Input() width!: number;
+    @Input() height!: number;
 }

@@ -1,1 +1,23 @@
-<p>search-item works!</p>
+<div class="search-item" [appBorderItem]="videoItem.snippet.publishedAt">
+  <app-video-thumbnail [thumbnailUrl]="videoItem.snippet.thumbnails.high.url"
+                       [width]="videoItem.snippet.thumbnails.high.width"
+                       [height]="videoItem.snippet.thumbnails.high.height">
+  </app-video-thumbnail>
+  <div class="item-info">
+    <div class="item-header">
+      <app-views-count [count]="videoItem.statistics.viewCount"></app-views-count>
+      <app-likes-count 
+      [count]="videoItem.statistics.likeCount" 
+      [isLiked]="videoItem.statistics.isLiked"
+      (likeChange)="onLike()"></app-likes-count>
+      <app-dislikes-count [count]="videoItem.statistics.dislikeCount"></app-dislikes-count>
+      <app-comments-count [count]="videoItem.statistics.commentCount"></app-comments-count>
+    </div>
+    <div class="item-description">
+      <p>{{ videoItem.snippet.title }}</p>
+    </div>
+    <div class="item-button">
+      <app-more-button></app-more-button>
+    </div>
+  </div>
+</div>

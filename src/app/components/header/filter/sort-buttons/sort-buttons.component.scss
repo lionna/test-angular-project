@@ -1,0 +1,17 @@
+.sort-buttons {
+  display: flex;
+  align-items: center;
+
+  .text-color-blue {
+    color: #007bff;
+    padding: 10px;
+
+    &:hover {
+      color: #b1b1b1;
+    }
+  }
+
+  .text-color-gray {
+    color: #929292;
+  }
+}

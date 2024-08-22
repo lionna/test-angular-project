@@ -1,12 +1,19 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
+
+import { CustomButtonComponent } from "../../custom-button/custom-button.component";
 
 @Component({
     selector: "app-filter-button",
     standalone: true,
-    imports: [],
+    imports: [CustomButtonComponent],
     templateUrl: "./filter-button.component.html",
     styleUrl: "./filter-button.component.scss"
 })
-export class FilterButtonComponent {
 
+export class FilterButtonComponent {
+    @Output() toggle = new EventEmitter<void>();
+
+    toggleFilter() {
+        this.toggle.emit();
+    }
 }
