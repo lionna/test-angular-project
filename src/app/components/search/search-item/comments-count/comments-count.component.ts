@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: "app-comments-count",
@@ -8,5 +8,5 @@ import { Component } from "@angular/core";
     styleUrl: "./comments-count.component.scss"
 })
 export class CommentsCountComponent {
-
+    @Input() count!: string;
 }

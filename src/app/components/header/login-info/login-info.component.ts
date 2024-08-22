@@ -7,6 +7,7 @@ import { Component } from "@angular/core";
     templateUrl: "./login-info.component.html",
     styleUrl: "./login-info.component.scss"
 })
+
 export class LoginInfoComponent {
 
 }

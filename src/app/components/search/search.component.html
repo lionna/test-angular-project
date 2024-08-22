@@ -1,1 +1,8 @@
-<p>search works!</p>
+ <div class="search">
+  @for (item of filteredItems | filterTextPipe: filterText; track item?.id) {
+    <app-search-item 
+      [videoItem]="item" 
+      (likeChange)="handleLike($event)">
+    </app-search-item>
+  }
+</div>

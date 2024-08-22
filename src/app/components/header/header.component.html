@@ -1,1 +1,28 @@
-<p>header works!</p>
+<div class="header" [ngClass]="{ expanded: isExpanded }">
+  <div class="wrapper">
+    <app-logo></app-logo>
+    <div class="search">
+      <app-search-input
+        #searchInput
+        (searchQueryChange)="onSearchQueryChange($event)"
+      ></app-search-input>
+      <app-search-button (searchClick)="onSearchClick()"></app-search-button>
+      <app-filter-button (toggle)="toggleFilter()"></app-filter-button>
+    </div>
+  </div>
+  <app-login-info class="login-info"></app-login-info>
+</div>
+@if (isExpanded) {
+<div class="additional-filters">
+  <app-filter
+    (sortChange)="onSortChange($event)"
+    (filterTextChange)="onFilterTextChange($event)"
+  ></app-filter>
+</div>
+}
+<app-search
+  [searchQuery]="searchQuery"
+  [sortBy]="sortBy"
+  [sortOrder]="sortOrder"
+  [filterText]="filterText"
+></app-search>

@@ -58,3 +58,21 @@ ng generate class components/search/search-item.model --type=model
 - [x] Created necessary interfaces for YouTube client based on mocked JSON response stored in `.json` file
 - [x] ESLint is configured for TypeScript, enabling the no-explicit-any rule.
 - [x] TypeScript is configured with `strict: true` rule enabled.
+
+
+# Task 2: Angular. Components. Directives & Pipes task
+
+1. Task 2: [link](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/components-directives-pipes.md)
+2. Screenshot:
+![image](img/2.1.pmg)
+3. Score: 100 /  100
+- [x] Main layout is implemented (+10)
+- [x] Fake search functionality is implemented: by submitting the form in the Header component, search results are shown (+20)
+- [x] The Search result item component contains all the necessary data (+10)
+- [x] The Filtering criteria block toggle functionality is implemented (+5)
+- [x] The colored border under the Search result item is implemented using a Directive (+15)
+- [x] Search result sorting is implemented (both ascending and descending directions) (+15)
+- [x] Search result filtering by key words is implemented using a Pipe (+15)
+- [x] Custom Button component is implemented and used across the application. The component utilizes [Content projection](https://angular.dev/guide/components/content-projection) to display the button text (+5)
+- [x]  At least one of the components is implemented as [standalone](https://angular.dev/guide/components/importing). (+5)
+
