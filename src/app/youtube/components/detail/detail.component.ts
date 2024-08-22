@@ -2,7 +2,7 @@ import { CommonModule, DatePipe } from "@angular/common";
 import {
     Component, EventEmitter, OnInit, Output
 } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { CommentsCountComponent } from "../../../shared/components/comments-count/comments-count.component";
 import { CustomButtonComponent } from "../../../shared/components/custom-button/custom-button.component";
@@ -12,6 +12,7 @@ import { ViewsCountComponent } from "../../../shared/components/views-count/view
 import { VideoItem } from "../../../shared/interfaces/videoItem.interface";
 import { BorderItemDirective } from "../../directives/border-item.directive";
 import { ColorItemDirective } from "../../directives/color-item.directive";
+import { GetInformationService } from "../../services/get-information.service";
 import { MoreButtonComponent } from "../search/search-item/more-button/more-button.component";
 import { VideoThumbnailComponent } from "../search/search-item/video-thumbnail/video-thumbnail.component";
 
@@ -39,7 +40,9 @@ export class DetailComponent implements OnInit {
     @Output() likeChange = new EventEmitter<VideoItem>();
 
     constructor(
-        private router: Router
+        private route: ActivatedRoute,
+        private router: Router,
+        private getInfoService: GetInformationService
     ) {}
 
     onLike() {
@@ -48,12 +51,20 @@ export class DetailComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        const state = history.state as { videoItem: VideoItem };
-        if (state?.videoItem) {
-            this.videoItem = state.videoItem;
-        } else {
-            this.router.navigate(["/404"]);
-        }
+        this.route.paramMap.subscribe((params) => {
+            const id = params.get("id");
+            if (id) {
+                this.getInfoService.searchItemById(id).subscribe((item) => {
+                    if (item) {
+                        this.videoItem = item;
+                    } else {
+                        this.router.navigate(["/404"]);
+                    }
+                });
+            } else {
+                this.router.navigate(["/404"]);
+            }
+        });
     }
 
     onBack() {
