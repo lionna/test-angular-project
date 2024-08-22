@@ -1,0 +1,6 @@
+<div class="sort-buttons">
+  <span class="text-color-gray">Sorting by</span>
+  @for (sortOption of sortingConfig; track sortOption?.id) {
+    <a class="text-color-blue" (click)="onSortChange(sortOption.key)">{{ sortOption.label }}</a>
+  }
+</div>

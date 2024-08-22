@@ -2,8 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 
-import { HeaderComponent } from "./components/header/header.component";
-import { SearchComponent } from "./components/search/search.component";
+import { HeaderComponent } from "./core/components/header/header.component";
 
 @Component({
     selector: "app-root",
@@ -11,8 +10,7 @@ import { SearchComponent } from "./components/search/search.component";
     imports: [
         RouterOutlet,
         CommonModule,
-        HeaderComponent,
-        SearchComponent
+        HeaderComponent
     ],
     templateUrl: "./app.component.html",
     styleUrl: "./app.component.scss"

@@ -1,0 +1,40 @@
+<div class="detail-box"> 
+<div class="detail-return-back"> 
+<app-custom-button class="back-button" height="32" width="32" [appColorItem]="videoItem.snippet.publishedAt" (click)="onBack()"> 
+    <img class="btn-image" src="assets/return.png" alt="Return back">
+</app-custom-button>
+</div>
+<div class="detail-container">
+  <div class="detail-image">
+    <app-video-thumbnail [thumbnailUrl]="videoItem.snippet.thumbnails.high.url"
+    [width]="videoItem.snippet.thumbnails.high.width"
+    [height]="videoItem.snippet.thumbnails.high.height">
+</app-video-thumbnail>
+  </div>
+  <div class="detail-details" [appBorderItem]="videoItem.snippet.publishedAt">
+  <div class="meta-main">
+    <div class="meta-header">
+    <h2>{{ videoItem.snippet.title }}</h2>
+      <span class="date">{{ videoItem.snippet.publishedAt | date:'EEEE, MMMM d, y' }}</span>
+  </div>
+    <div class="description-wrapper">
+    Description:
+    <p class="description">
+      {{ videoItem.snippet.localized.description }}
+    </p>
+  </div>
+  </div>
+    <div class="meta-info">
+      <div class="meta-icons">
+        <app-views-count [count]="videoItem.statistics.viewCount"></app-views-count>
+        <app-likes-count 
+        [count]="videoItem.statistics.likeCount" 
+        [isLiked]="videoItem.statistics.isLiked"
+        (likeChange)="onLike()"></app-likes-count>
+        <app-dislikes-count [count]="videoItem.statistics.dislikeCount"></app-dislikes-count>
+        <app-comments-count [count]="videoItem.statistics.commentCount"></app-comments-count>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
