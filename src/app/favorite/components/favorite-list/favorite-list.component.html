@@ -1,6 +1,6 @@
  <div class="search">
-  @if((favoriteVideos$ | async)?.length??0 > 0){
-    @for(item of (favoriteVideos$ | async) ; track item?.id){
+  @if(!!favoriteVideos()){
+    @for(item of (favoriteVideos()) ; track item?.id){
       <app-search-item [videoItem]="item"></app-search-item>
     }
   }

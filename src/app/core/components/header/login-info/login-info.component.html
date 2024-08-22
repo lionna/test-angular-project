@@ -5,7 +5,7 @@
     }
     <app-favorite-button
       (click)="onFavoritePage()"
-      [favoriteCount]="favoriteCount$ | async"
+      [favoriteCount]="favoriteCount()"
     ></app-favorite-button>
     <img src="assets/user-icon.png" alt="User Icon" />
     <span class="user-name">{{ login }}</span>

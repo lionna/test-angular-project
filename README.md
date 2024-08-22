@@ -154,7 +154,6 @@ favorites list:
 pagination
 ![image](img/6.4.png)
 
-
 3. Score: 100 / 110
   - [x] Admin Page is generated (+5)
   - [x] Favorite Page is generated (+5)
@@ -165,3 +164,16 @@ pagination
   - [x] Favorite Page displays all marked videos from List Page or View Page (+10)
   - [x] Clicking the favorite button on the card on Favorite Page removes item from the store and from the page immediately (+15)
   - [x] List Page displays 20 items with pagination and Custom Cards are added to the beginning of the list on 1 page (+10)
+    
+
+# Task 7: Signals
+
+1. Task 7: Signals [link](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/signals.md)
+2. Screenshot:
+
+![image](img/7.1.png)
+ 
+3. Score: 30 /  30
+  - [x] Refactor the API service to use a signal for managing the API request and returning the response data. Implement this in two or more times. (+10)
+  - [x] Use a signal to display data in the component's template. Implement this in two or more times. (+10)
+  - [x] Convert Observables to Signals using toSignal. Implement this in one or more times. (+10)

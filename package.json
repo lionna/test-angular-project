@@ -27,6 +27,7 @@
         "@ngrx/effects": "^18.0.2",
         "@ngrx/entity": "^18.0.2",
         "@ngrx/router-store": "^18.0.2",
+        "@ngrx/signals": "^18.0.2",
         "@ngrx/store": "^18.0.2",
         "@ngrx/store-devtools": "^18.0.2",
         "eslint-config-airbnb-base": "^15.0.0",
@@ -56,9 +57,9 @@
         "@types/uuid": "^10.0.0",
         "@typescript-eslint/eslint-plugin": "7.16.1",
         "@typescript-eslint/parser": "7.16.1",
-        "eslint": "^8.57.0",
         "eslint-plugin-prettier": "^5.2.1",
         "globals": "^15.9.0",
+        "eslint": "^8.57.0",
         "jasmine-core": "~5.1.2",
         "karma": "~6.4.3",
         "karma-chrome-launcher": "~3.2.0",
@@ -70,4 +71,3 @@
         "typescript-eslint": "^8.0.1"
     }
 }
-

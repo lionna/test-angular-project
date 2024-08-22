@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, OnInit, signal } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { Observable } from "rxjs";
 
 import { selectAllFavorites } from "../../../redux/selectors/favorite.selectors";
 import { VideoItem } from "../../../shared/interfaces/videoItem.interface";
@@ -14,10 +13,15 @@ import { SearchItemComponent } from "../../../youtube/components/search/search-i
     templateUrl: "./favorite-list.component.html",
     styleUrls: ["./favorite-list.component.scss"],
 })
-export class FavoriteListComponent {
-    favoriteVideos$: Observable<VideoItem[]> = new Observable();
+export class FavoriteListComponent implements OnInit {
+    favoriteVideos = signal<VideoItem[]>([]);
 
-    constructor(private store: Store) {
-        this.favoriteVideos$ = this.store.select(selectAllFavorites);
+    constructor(private store: Store) {}
+
+    ngOnInit(): void {
+        // eslint-disable-next-line @ngrx/no-store-subscription
+        this.store.select(selectAllFavorites).subscribe((favorites) => {
+            this.favoriteVideos.set(favorites);
+        });
     }
 }
