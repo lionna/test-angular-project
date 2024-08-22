@@ -177,3 +177,27 @@ pagination
   - [x] Refactor the API service to use a signal for managing the API request and returning the response data. Implement this in two or more times. (+10)
   - [x] Use a signal to display data in the component's template. Implement this in two or more times. (+10)
   - [x] Convert Observables to Signals using toSignal. Implement this in one or more times. (+10)
+
+  
+# Task 8: JEST tests
+
+1. Task: [link](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/unit-testing-jest.md)
+2. Screenshot:
+
+![image](img/8.1.png)
+
+![image](img/8.2.png)
+
+
+3. Score: 100 / 110
+  - [x] Uninstall Karma and Jasmine packages from the Angular project. (+5)
+  - [x]  Remove the 'test' object from the angular.json file. (+5)
+  - [x]  Install Jest with types and preset for Angular. (+5)
+  - [x]  Create setup-jest.ts file in root folder. (+5)
+  - [x]  Create jest.config file. (+5)
+  - [x]  Add jest configuration on package.json. (+5)
+ Create unit test cases (tests, not test suites), with each case valued at 2 points:
+  - [x]  10 unit test cases for services (+20)
+  - [x]  10 unit test cases for components (+20)
+  - [x]  10 unit test cases for NGRX store (+20)
+  - [x]  Add screenshots of the coverage from the console and from the browser, of all your unit tests in the Pull Request. (+10)

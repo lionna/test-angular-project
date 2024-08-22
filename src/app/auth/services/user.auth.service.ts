@@ -10,6 +10,7 @@ import { BrowserStorageService } from "./storage.service";
 export class UserAuthService {
     private readonly authTokenKey = "authToken";
     private readonly userKey = "userName";
+    private adminUserName = "admin@test.com";
 
     private authStateSubject = new BehaviorSubject<boolean>(
         this.isUserAuthenticated(),
@@ -55,6 +56,6 @@ export class UserAuthService {
 
     checkAdminStatus(): boolean {
         const currentUser = this.getCurrentUser();
-        return currentUser === "admin@test.com";
+        return currentUser === this.adminUserName;
     }
 }
