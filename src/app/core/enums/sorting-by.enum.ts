@@ -1,4 +1,4 @@
 export enum SortingBy {
     Date = "date",
-    Views = "views"
+    Views = "views",
 }

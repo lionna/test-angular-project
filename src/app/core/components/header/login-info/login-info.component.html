@@ -1,14 +1,22 @@
 <div class="login-info">
-  @if(isUserAuthenticated){    
+  @if (isUserAuthenticated) {
+    @if (isAdmin) {
+      <app-add-item-button (click)="onCreatePage()"></app-add-item-button>
+    }
+    <app-favorite-button
+      (click)="onFavoritePage()"
+      [favoriteCount]="favoriteCount$ | async"
+    ></app-favorite-button>
     <img src="assets/user-icon.png" alt="User Icon" />
-      <span class="user-name">{{ login }}</span>
-      <app-custom-button (click)="logout()">
-        SingOut
-      </app-custom-button>   
+    <span class="user-name">{{ login }}</span>
+    <app-custom-button (click)="logout()">
+      <img
+        src="assets/signout.png"
+        style="height: 15px; width: 15px"
+        alt="Favorite"
+      />
+    </app-custom-button>
+  } @else {
+    <app-custom-button (click)="navigateToLogin()"> SingIn </app-custom-button>
   }
-@else{ 
-  <app-custom-button (click)="navigateToLogin()">
-    SingIn
-  </app-custom-button>  
-} 
 </div>

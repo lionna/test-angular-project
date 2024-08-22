@@ -7,9 +7,8 @@ import { CustomButtonComponent } from "../../../../shared/components/custom-butt
     standalone: true,
     imports: [CustomButtonComponent],
     templateUrl: "./filter-button.component.html",
-    styleUrl: "./filter-button.component.scss"
+    styleUrl: "./filter-button.component.scss",
 })
-
 export class FilterButtonComponent {
     @Output() toggle = new EventEmitter<void>();
 

@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, ViewChild } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 
 import { SearchComponent } from "../../../youtube/components/search/search.component";
 import { SortingBy } from "../../enums/sorting-by.enum";
@@ -23,10 +23,10 @@ import { SearchInputComponent } from "./search-input/search-input.component";
         LogoComponent,
         SearchInputComponent,
         SearchComponent,
-        RouterLink
+        RouterLink,
     ],
     templateUrl: "./header.component.html",
-    styleUrls: ["./header.component.scss"]
+    styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent {
     isExpanded = false;
@@ -36,9 +36,13 @@ export class HeaderComponent {
     filterText = "";
     isSearchInitiated = false;
 
-    @ViewChild(SearchInputComponent) searchInputComponent!: SearchInputComponent;
+    @ViewChild(SearchInputComponent)
+    searchInputComponent!: SearchInputComponent;
 
-    constructor(private sortingService: SortingService) {}
+    constructor(
+        private sortingService: SortingService,
+        private router: Router,
+    ) {}
 
     toggleFilter() {
         this.isExpanded = !this.isExpanded;
@@ -50,7 +54,13 @@ export class HeaderComponent {
         this.sortingService.setSearchQuery(this.searchQuery);
     }
 
-    onSortChange({ sortBy, sortOrder }: { sortBy: SortingBy, sortOrder: SortingOrder }) {
+    onSortChange({
+        sortBy,
+        sortOrder,
+    }: {
+        sortBy: SortingBy;
+        sortOrder: SortingOrder;
+    }) {
         this.sortBy = sortBy;
         this.sortOrder = sortOrder;
         this.sortingService.setSortingBy(sortBy);
@@ -60,5 +70,9 @@ export class HeaderComponent {
     onFilterTextChange(filterText: string) {
         this.filterText = filterText;
         this.sortingService.setFilterText(filterText);
+    }
+
+    onIndexPage() {
+        this.router.navigate(["/search"]);
     }
 }

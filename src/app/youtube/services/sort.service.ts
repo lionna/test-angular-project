@@ -5,19 +5,27 @@ import { SortingOrder } from "../../core/enums/sorting-order.enum";
 import { VideoItem } from "../../shared/interfaces/videoItem.interface";
 
 @Injectable({
-    providedIn: "root"
+    providedIn: "root",
 })
 export class SortService {
     private getPublishedAtTimestamp(item: VideoItem): number {
-        return new Date(item.snippet.publishedAt).getTime();
+        return new Date(item?.snippet?.publishedAt ?? new Date()).getTime();
     }
 
-    private parseIntWithDefault(value: string | undefined, defaultValue: number): number {
+    private parseIntWithDefault(
+        value: string | undefined,
+        defaultValue: number,
+    ): number {
         return value ? parseInt(value, 10) || defaultValue : defaultValue;
     }
 
-    sortItems(items: VideoItem[], sortBy: SortingBy, sortOrder: SortingOrder): VideoItem[] {
-        return items.sort((a, b) => {
+    sortItems(
+        items: VideoItem[],
+        sortBy: SortingBy,
+        sortOrder: SortingOrder,
+    ): VideoItem[] {
+        const newItems = [...items];
+        return newItems.sort((a, b) => {
             const timestampA = this.getPublishedAtTimestamp(a);
             const timestampB = this.getPublishedAtTimestamp(b);
 
@@ -25,9 +33,16 @@ export class SortService {
                 return sortOrder === SortingOrder.Asc
                     ? timestampA - timestampB
                     : timestampB - timestampA;
-            } if (sortBy === SortingBy.Views) {
-                const viewsA = this.parseIntWithDefault(a.statistics.viewCount, 0);
-                const viewsB = this.parseIntWithDefault(b.statistics.viewCount, 0);
+            }
+            if (sortBy === SortingBy.Views) {
+                const viewsA = this.parseIntWithDefault(
+                    a.statistics?.viewCount ?? "0",
+                    0,
+                );
+                const viewsB = this.parseIntWithDefault(
+                    b.statistics?.viewCount ?? "0",
+                    0,
+                );
 
                 return sortOrder === SortingOrder.Asc
                     ? viewsA - viewsB

@@ -13,4 +13,5 @@ export interface Snippet {
     liveBroadcastContent: string;
     localized: Localized;
     defaultAudioLanguage: string;
+    defaultLanguage: string;
 }

@@ -5,7 +5,7 @@ import { Component, Input } from "@angular/core";
     standalone: true,
     imports: [],
     templateUrl: "./views-count.component.html",
-    styleUrl: "./views-count.component.scss"
+    styleUrl: "./views-count.component.scss",
 })
 export class ViewsCountComponent {
     @Input() count!: string;

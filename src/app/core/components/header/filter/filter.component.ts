@@ -8,18 +8,18 @@ import { WordFilterInputComponent } from "./word-filter-input/word-filter-input.
 @Component({
     selector: "app-filter",
     standalone: true,
-    imports: [
-        SortButtonsComponent,
-        WordFilterInputComponent
-    ],
+    imports: [SortButtonsComponent, WordFilterInputComponent],
     templateUrl: "./filter.component.html",
-    styleUrls: ["./filter.component.scss"]
+    styleUrls: ["./filter.component.scss"],
 })
 export class FilterComponent {
-    @Output() sortChange = new EventEmitter<{ sortBy: SortingBy, sortOrder: SortingOrder }>();
+    @Output() sortChange = new EventEmitter<{
+        sortBy: SortingBy;
+        sortOrder: SortingOrder;
+    }>();
     @Output() filterTextChange = new EventEmitter<string>();
 
-    onSortChange(sortEvent: { sortBy: SortingBy, sortOrder: SortingOrder }) {
+    onSortChange(sortEvent: { sortBy: SortingBy; sortOrder: SortingOrder }) {
         this.sortChange.emit(sortEvent);
     }
 

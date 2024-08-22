@@ -1,10 +1,12 @@
+@import '../../../../shared/utils/constants.scss';
+
 .search-item {
   display: flex;
   flex-direction: column;
   padding: 20px;
   padding-bottom: 10px;
   box-sizing: border-box;
-  background-color: #e5e5e5;
+  background-color: $MAIN_BACKGROUND_COLOR_GREY;
   justify-content: space-between;
   min-height: 300px;
   border: none;
@@ -35,7 +37,7 @@
     .item-button {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       margin-top: auto;
     }
   }

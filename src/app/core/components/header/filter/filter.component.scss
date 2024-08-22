@@ -1,7 +1,9 @@
+@import '../../../../shared/utils/constants.scss';
+
 .filter {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e5e5e5;
+  background-color: $MAIN_BACKGROUND_COLOR_GREY;
   padding: 5px;
 }

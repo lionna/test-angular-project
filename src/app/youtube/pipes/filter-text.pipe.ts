@@ -12,6 +12,8 @@ export class FilterTextPipe implements PipeTransform {
         if (!filterText) return items;
 
         const lowerCaseFilter = filterText.toLowerCase();
-        return items.filter((item) => JSON.stringify(item).toLowerCase().includes(lowerCaseFilter));
+        return items.filter((item) =>
+            JSON.stringify(item).toLowerCase().includes(lowerCaseFilter),
+        );
     }
 }

@@ -6,7 +6,7 @@ import { FormsModule } from "@angular/forms";
     standalone: true,
     imports: [FormsModule],
     templateUrl: "./word-filter-input.component.html",
-    styleUrl: "./word-filter-input.component.scss"
+    styleUrl: "./word-filter-input.component.scss",
 })
 export class WordFilterInputComponent {
     public filterInput = "";

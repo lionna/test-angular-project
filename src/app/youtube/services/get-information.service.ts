@@ -10,7 +10,7 @@ const BASE_VIDEO_URL = "/videos";
 const BASE_SEARCH_URL = "/search";
 const VIDEO_PART = "snippet,statistics";
 const SEARCH_TYPE = "video";
-const MAX_RESULTS = 15;
+const MAX_RESULTS = 30;
 const SEARCH_DELAY = 300;
 const ITEM_PART = "snippet,contentDetails,statistics";
 
@@ -42,5 +42,12 @@ export class GetInformationService {
             delay(SEARCH_DELAY),
             map((response) => response.items.find((item) => item.id === id)),
         );
+    }
+
+    fetchVideosByIds(ids: string[]): Observable<VideoItem[]> {
+        const url = `${BASE_VIDEO_URL}?part=${VIDEO_PART}&id=${ids.join(",")}`;
+        return this.http
+            .get<{ items: VideoItem[] }>(url)
+            .pipe(map((response) => response.items));
     }
 }

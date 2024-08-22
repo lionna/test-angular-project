@@ -1,118 +1,155 @@
 <div class="create-form-container">
   <div class="create-form-box" [formGroup]="createForm">
-    <h2>Create new card</h2>      
+    <h2>Create new card</h2>
     <div class="form-group">
       <label for="title">Title</label>
       <input
         type="text"
         id="title"
         formControlName="title"
-        [ngClass]="{'invalid-input': !createForm.controls.title.valid && createForm.controls.title.touched}"
-        />
-        @if(!createForm.controls.title.valid && createForm.controls.title.touched){
-           @if(createForm.controls.title.hasError('required')) {
-              <small class="error">Please enter a title.</small>
-            }
-            @else if(createForm.controls.title.hasError('minlength')) {
-              <small class="error">The title is too short.</small>
-            }
-            @else if(createForm.controls.title.hasError('maxlength')) {
-              <small class="error">The title is too long.</small>
-            }
-           @else{
-              <small class="error">Please check input title.</small>
-            }
-          }
-      </div>
+        [ngClass]="{
+          'invalid-input':
+            !createForm.controls.title.valid &&
+            createForm.controls.title.touched,
+        }"
+      />
+      @if (
+        !createForm.controls.title.valid && createForm.controls.title.touched
+      ) {
+        @if (createForm.controls.title.hasError("required")) {
+          <small class="error">Please enter a title.</small>
+        } @else if (createForm.controls.title.hasError("minlength")) {
+          <small class="error">The title is too short.</small>
+        } @else if (createForm.controls.title.hasError("maxlength")) {
+          <small class="error">The title is too long.</small>
+        } @else {
+          <small class="error">Please check input title.</small>
+        }
+      }
+    </div>
     <div class="form-group">
       <label for="description">Description</label>
       <input
         type="text"
         id="description"
         formControlName="description"
-        [ngClass]="{'invalid-input': !createForm.controls.description.valid && createForm.controls.description.touched}"
-        />   
-        @if(!createForm.controls.description.valid && createForm.controls.description.touched){
-          @if(createForm.controls.description.hasError('maxlength')) {
-            <small class="error">The description is too long.</small>
-          }
-         @else{
+        [ngClass]="{
+          'invalid-input':
+            !createForm.controls.description.valid &&
+            createForm.controls.description.touched,
+        }"
+      />
+      @if (
+        !createForm.controls.description.valid &&
+        createForm.controls.description.touched
+      ) {
+        @if (createForm.controls.description.hasError("maxlength")) {
+          <small class="error">The description is too long.</small>
+        } @else {
           <small class="error">Check input description</small>
-          }
         }
-      </div> 
+      }
+    </div>
     <div class="form-group">
       <label for="img">Img</label>
       <input
         type="text"
         id="img"
         formControlName="img"
-        [ngClass]="{'invalid-input': !createForm.controls.img.valid && createForm.controls.img.touched}"
-        />   
-        @if(!createForm.controls.img.valid && createForm.controls.img.touched){
-          @if(createForm.controls.img.hasError('required')) {
-            <small class="error">Please enter a link to the image.</small>
-          }
-         @else{
+        [ngClass]="{
+          'invalid-input':
+            !createForm.controls.img.valid && createForm.controls.img.touched,
+        }"
+      />
+      @if (!createForm.controls.img.valid && createForm.controls.img.touched) {
+        @if (createForm.controls.img.hasError("required")) {
+          <small class="error">Please enter a link to the image.</small>
+        } @else {
           <small class="error">Check input img</small>
-          }
         }
-      </div> 
+      }
+    </div>
     <div class="form-group">
       <label for="link">Link</label>
       <input
         type="url"
         id="link"
         formControlName="link"
-        [ngClass]="{'invalid-input': !createForm.controls.link.valid && createForm.controls.link.touched}"
-        />   
-        @if(!createForm.controls.link.valid && createForm.controls.link.touched){
-          @if(createForm.controls.link.hasError('required')) {
-            <small class="error">Please enter a link to the video.</small>
-          }
-         @else{
+        [ngClass]="{
+          'invalid-input':
+            !createForm.controls.link.valid && createForm.controls.link.touched,
+        }"
+      />
+      @if (
+        !createForm.controls.link.valid && createForm.controls.link.touched
+      ) {
+        @if (createForm.controls.link.hasError("required")) {
+          <small class="error">Please enter a link to the video.</small>
+        } @else {
           <small class="error">Check input link</small>
-          }          
         }
-      </div>
+      }
+    </div>
     <div class="form-group">
       <label for="creationDate">Creation Date</label>
       <input
         type="date"
         id="creationDate"
         formControlName="creationDate"
-        [ngClass]="{'invalid-input': !createForm.controls.creationDate.valid && createForm.controls.creationDate.touched}"
-        />
-      @if(!createForm.controls.creationDate.valid && createForm.controls.creationDate.touched){
-        @if(createForm.controls.creationDate.hasError('required')) {
+        [ngClass]="{
+          'invalid-input':
+            !createForm.controls.creationDate.valid &&
+            createForm.controls.creationDate.touched,
+        }"
+      />
+      @if (
+        !createForm.controls.creationDate.valid &&
+        createForm.controls.creationDate.touched
+      ) {
+        @if (createForm.controls.creationDate.hasError("required")) {
           <small class="error">Please enter a creation date.</small>
-        }
-        @else if(createForm.controls.creationDate.hasError('dateInFuture')) {
+        } @else if (createForm.controls.creationDate.hasError("dateInFuture")) {
           <small class="error">The date is invalid.</small>
+        } @else {
+          <small class="error">Check input creation date</small>
         }
-       @else{
-        <small class="error">Check input creation date</small>
-        }          
       }
     </div>
     <app-form-group
-  [parentForm]="createForm"
-  formArrayName="tags"
-  labelValue="Tag"
-  messageValue="tag"
-  (addItem)="addItem()"
-  (removeItem)="removeItem($event)">
-</app-form-group>
+      [parentForm]="createForm"
+      formArrayName="tags"
+      labelValue="Tag"
+      messageValue="tag"
+      (addItem)="addItem()"
+      (removeItem)="removeItem($event)"
+    >
+    </app-form-group>
     <div class="create-button-wrapper">
-      <app-custom-button (click)="addItem()" class="green-button" width="105" type="button" [disabled]="tags.length >= 5">
+      <app-custom-button
+        (click)="addItem()"
+        class="green-button"
+        width="105"
+        type="button"
+        [disabled]="tags.length >= 5"
+      >
         Add Tag
       </app-custom-button>
-      <app-custom-button (click)="clearForm()" class="red-button" width="105" type="button">
+      <app-custom-button
+        (click)="clearForm()"
+        class="red-button"
+        width="105"
+        type="button"
+      >
         Clear card
       </app-custom-button>
-      <app-custom-button (click)="onSubmit()" [disabled]="!createForm.valid" width="105" type="submit">
+      <app-custom-button
+        (click)="onSubmit()"
+        [disabled]="!createForm.valid"
+        width="105"
+        type="submit"
+      >
         Create card
       </app-custom-button>
-    </div>     
+    </div>
   </div>
 </div>

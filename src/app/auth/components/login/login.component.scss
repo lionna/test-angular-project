@@ -31,7 +31,7 @@
       margin-bottom: 5px;
       text-align: left;
       padding: 2px;
-      color: $TEXT_COLOR_GRAY;
+      color: $TEXT_COLOR_GREY;
       font-size: 10px;
       margin-left: 12px;
     }
@@ -46,7 +46,7 @@
       &.invalid-input {
         border-color: $ITEM_ERROR_MESSAGE;
         background-color: $ITEM_ERROR_BACK_COLOR;
-        color: $TEXT_COLOR_GRAY;
+        color: $TEXT_COLOR_GREY;
       }
     }
 
@@ -66,7 +66,7 @@
     padding-left: 12px;
 
     ul {
-      color: $TEXT_COLOR_GRAY;
+      color: $TEXT_COLOR_GREY;
       padding-left: 15px;
       margin-top: 5px;
       list-style-type: disc;

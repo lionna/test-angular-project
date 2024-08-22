@@ -1,10 +1,14 @@
 import { Injectable } from "@angular/core";
 
-import { DAYS_THRESHOLDS, ITEM_COLOR_CLASSES, ITEM_COLORS } from "../../shared/utils/constants";
+import {
+    DAYS_THRESHOLDS,
+    ITEM_COLOR_CLASSES,
+    ITEM_COLORS,
+} from "../../shared/utils/constants";
 import { getDateDifferenceInDays } from "../../shared/utils/date-utils";
 
 @Injectable({
-    providedIn: "root"
+    providedIn: "root",
 })
 export class ColorService {
     getColor(publicationDate: string): string {

@@ -1,7 +1,5 @@
 import { CommonModule } from "@angular/common";
-import {
-    Component, EventEmitter, Input, Output
-} from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { FormArray, FormGroup, ReactiveFormsModule } from "@angular/forms";
 
 import { CustomButtonComponent } from "../custom-button/custom-button.component";
@@ -9,13 +7,9 @@ import { CustomButtonComponent } from "../custom-button/custom-button.component"
 @Component({
     selector: "app-form-group",
     standalone: true,
-    imports: [
-        ReactiveFormsModule,
-        CommonModule,
-        CustomButtonComponent
-    ],
+    imports: [ReactiveFormsModule, CommonModule, CustomButtonComponent],
     templateUrl: "./form-group.component.html",
-    styleUrls: ["./form-group.component.scss"]
+    styleUrls: ["./form-group.component.scss"],
 })
 export class FormGroupComponent {
     @Input() parentForm!: FormGroup;
